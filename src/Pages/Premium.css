@@ -1,0 +1,194 @@
+.premium-page {
+  display: grid;
+  min-height: 100vh;
+  padding: 2rem;
+  box-sizing: border-box;
+  place-items: center;
+  color: var(--text-primary);
+}
+
+.premium {
+  width: min(100%, 1060px);
+  margin: auto;
+}
+
+.premium__header {
+  margin-bottom: 2.25rem;
+  text-align: center;
+}
+
+.premium__eyebrow {
+  margin: 0 0 0.65rem;
+  color: var(--accent-muted);
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+
+.premium__title {
+  margin: 0;
+  color: var(--text-heading);
+  font-size: clamp(2rem, 5vw, 3rem);
+  line-height: 1.15;
+}
+
+.premium__intro {
+  margin: 0.75rem 0 0;
+  color: var(--text-muted);
+  font-size: 1rem;
+}
+
+.premium__plans {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  align-items: stretch;
+  gap: 1.25rem;
+}
+
+.premium-plan {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  min-height: 290px;
+  padding: 1.75rem;
+  border: 1px solid var(--surface-border);
+  border-radius: 18px;
+  background: var(--surface-background);
+  -webkit-backdrop-filter: blur(14px);
+  backdrop-filter: blur(14px);
+  box-shadow: var(--surface-shadow);
+  transition: transform 200ms ease, border-color 200ms ease, background 200ms ease, box-shadow 200ms ease;
+}
+
+.premium-plan:hover {
+  transform: translateY(-4px);
+  border-color: var(--surface-hover-border);
+  box-shadow: var(--premium-hover-shadow);
+}
+
+.premium-plan--featured {
+  border-color: var(--surface-hover-border);
+  background: var(--featured-surface-background);
+  box-shadow: var(--premium-featured-shadow);
+}
+
+.premium-plan__badge {
+  align-self: flex-start;
+  margin: -0.25rem 0 1rem;
+  padding: 0.35rem 0.65rem;
+  border: 1px solid rgba(190, 178, 255, 0.26);
+  border-radius: 999px;
+  background: var(--premium-badge-background);
+  color: var(--premium-badge-text);
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+}
+
+.premium-plan__name {
+  margin: 0;
+  color: var(--text-heading);
+  font-size: 1.2rem;
+}
+
+.premium-plan__price {
+  display: flex;
+  align-items: baseline;
+  gap: 0.45rem;
+  margin: 1.15rem 0 0;
+}
+
+.premium-plan__price > span:first-child {
+  color: var(--text-heading);
+  font-size: 2.7rem;
+  font-weight: 750;
+  letter-spacing: -0.05em;
+  line-height: 1;
+}
+
+.premium-plan__period {
+  color: var(--text-muted);
+  font-size: 0.9rem;
+}
+
+.premium-plan__description {
+  margin: 1rem 0 1.5rem;
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+  line-height: 1.55;
+}
+
+.premium-plan__button {
+  width: 100%;
+  min-height: 46px;
+  margin-top: auto;
+  border: 1px solid rgba(157, 158, 255, 0.36);
+  border-radius: 10px;
+  background: var(--premium-button-background);
+  color: var(--premium-button-text);
+  font: inherit;
+  font-size: 0.88rem;
+  font-weight: 650;
+  cursor: pointer;
+  transition: border-color 180ms ease, background 180ms ease, box-shadow 180ms ease;
+}
+
+.premium-plan--featured .premium-plan__button {
+  border-color: rgba(184, 174, 255, 0.55);
+  background: var(--premium-featured-button-background);
+  box-shadow: 0 6px 20px rgba(87, 74, 208, 0.2);
+  color: var(--inverse-text);
+}
+
+.premium-plan__button:hover {
+  border-color: rgba(191, 185, 255, 0.72);
+  background: var(--premium-button-background);
+  box-shadow: 0 0 18px rgba(108, 98, 255, 0.16);
+}
+
+.premium-plan--featured .premium-plan__button:hover {
+  background: var(--premium-featured-button-background);
+}
+
+.premium-plan__button:focus-visible {
+  outline: 2px solid var(--focus-ring);
+  outline-offset: 3px;
+}
+
+.premium__note {
+  margin: 1.25rem 0 0;
+  color: var(--text-subtle);
+  font-size: 0.78rem;
+  text-align: center;
+}
+
+@media (max-width: 760px) {
+  .premium-page {
+    padding: 2.5rem 1.25rem;
+  }
+
+  .premium {
+    width: min(100%, 480px);
+  }
+
+  .premium__plans {
+    grid-template-columns: 1fr;
+  }
+
+  .premium-plan {
+    min-height: 250px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .premium-plan,
+  .premium-plan__button {
+    transition: none;
+  }
+
+  .premium-plan:hover {
+    transform: none;
+  }
+}
